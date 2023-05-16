@@ -313,6 +313,11 @@ Transform:
   m_Father: {fileID: 1593332101}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &636392024 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 9047869847320356585, guid: 08597f70c73b17247ac84843d954e0d8, type: 3}
+  m_PrefabInstance: {fileID: 9047869846357167002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +519,7 @@ GameObject:
   - component: {fileID: 783343217}
   - component: {fileID: 783343216}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -552,7 +557,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b107d776057f7c54e85240b1b5b145d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -709,6 +714,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  gravity: -9.8
+  jumpHeight: 1
 --- !u!114 &1549643530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,6 +728,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b80ae4f86d1b604a904aead4a0a6521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1549643531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549643528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fe598bb5c088948af0aacc656e6dd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 636392024}
+  xSense: 25
+  ySense: 25
 --- !u!1 &1593332100
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +977,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9047869846494394089, guid: 08597f70c73b17247ac84843d954e0d8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 99c6c1e4b3b74634fba0e4ae9b236548, type: 2}
     - target: {fileID: 9047869846494394091, guid: 08597f70c73b17247ac84843d954e0d8, type: 3}
       propertyPath: m_Name
       value: Player
