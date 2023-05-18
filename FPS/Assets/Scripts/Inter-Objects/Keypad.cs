@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Keypad : MonoBehaviour
+public class Keypad : Interable
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private GameObject door;
+    private bool doorOpen;
+    protected override void Interact()
     {
-        
+        doorOpen = !doorOpen;
+        door.GetComponent<Animator>().SetBool("IsOpen", doorOpen);
+        Debug.Log("Interacted with " + gameObject.name);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
